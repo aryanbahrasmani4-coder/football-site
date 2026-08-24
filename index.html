@@ -87,7 +87,9 @@
             line-height: 1.9;
         }
 
-        /* نتایج مسابقات */
+        /* =========================
+           نتایج مسابقات
+        ========================= */
 
         .match-card {
             background-color: #f7fbf8;
@@ -97,45 +99,62 @@
             margin-top: 25px;
         }
 
+        .match-status {
+            display: inline-block;
+            background-color: #d7f0df;
+            color: #168a45;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 15px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
         .match-date {
             color: #666;
             font-size: 17px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .match-score {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
+            gap: 20px;
+            direction: ltr;
+        }
+
+        .team {
+            text-align: center;
         }
 
         .team-name {
             font-size: 25px;
             font-weight: bold;
             color: #0d6330;
-            min-width: 180px;
+            direction: rtl;
+        }
+
+        .winner {
+            color: #168a45;
         }
 
         .score {
             background-color: #168a45;
             color: white;
-            font-size: 42px;
+            font-size: 45px;
             font-weight: bold;
-            padding: 12px 28px;
-            border-radius: 15px;
+            padding: 14px 30px;
+            border-radius: 16px;
             direction: ltr;
+            white-space: nowrap;
         }
 
-        .match-status {
-            display: inline-block;
-            background-color: #d7f0df;
+        .match-summary {
+            margin-top: 25px;
+            font-size: 18px;
+            font-weight: bold;
             color: #168a45;
-            padding: 7px 16px;
-            border-radius: 20px;
-            font-size: 15px;
-            margin-bottom: 15px;
         }
 
         .events {
@@ -146,6 +165,7 @@
         .events h3 {
             text-align: center;
             font-size: 24px;
+            margin-bottom: 20px;
         }
 
         .event {
@@ -155,14 +175,16 @@
             margin-bottom: 12px;
             border-radius: 12px;
             font-size: 18px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
         }
 
-        .event-number {
+        .event-title {
             color: #168a45;
             font-weight: bold;
-            margin-left: 8px;
+            margin-left: 10px;
         }
+
+        /* کادر فنی */
 
         .coaches {
             display: flex;
@@ -178,6 +200,8 @@
             border-radius: 15px;
             width: 220px;
         }
+
+        /* بازیکنان */
 
         .players {
             display: flex;
@@ -238,17 +262,17 @@
             }
 
             .match-score {
+                grid-template-columns: 1fr;
                 gap: 15px;
             }
 
-            .team-name {
-                width: 100%;
-                min-width: auto;
-                font-size: 22px;
+            .score {
+                order: 2;
+                font-size: 38px;
             }
 
-            .score {
-                font-size: 36px;
+            .team-name {
+                font-size: 22px;
             }
 
         }
@@ -286,6 +310,8 @@
     <div class="container">
 
 
+        <!-- درباره باشگاه -->
+
         <section id="about">
 
             <h2>⚽ درباره باشگاه</h2>
@@ -305,35 +331,44 @@
         </section>
 
 
+        <!-- نتایج مسابقات -->
+
         <section id="results">
 
             <h2>🏆 نتایج مسابقات</h2>
 
             <div class="match-card">
 
-                <div class="match-status">پایان بازی</div>
+                <div class="match-status">
+                    پایان بازی
+                </div>
 
                 <div class="match-date">
                     📅 ۲ شهریور ۱۴۰۵
                 </div>
 
                 <div class="match-score">
-<div class="match-score">
 
-    <div class="team-name">
-        نام‌آوران جنوب
-    </div>
+                    <div class="team">
+                        <div class="team-name winner">
+                            نام‌آوران جنوب
+                        </div>
+                    </div>
 
-    <div class="score">
-        ۲ - ۰
-    </div>
+                    <div class="score">
+                        2 - 0
+                    </div>
 
-    <div class="team-name">
-        شاهین
-    </div>
+                    <div class="team">
+                        <div class="team-name">
+                            شاهین
+                        </div>
+                    </div>
 
-</div>>
+                </div>
 
+                <div class="match-summary">
+                    🟢 نام‌آوران جنوب با نتیجه ۲ بر ۰ مقابل شاهین پیروز شد.
                 </div>
 
                 <div class="events">
@@ -341,12 +376,16 @@
                     <h3>⚽ اتفاقات مسابقه</h3>
 
                     <div class="event">
-                        <span class="event-number">گل اول ⚽</span>
+                        <span class="event-title">
+                            ⚽ گل اول نام‌آوران جنوب:
+                        </span>
                         طاها کمالی رمون
                     </div>
 
                     <div class="event">
-                        <span class="event-number">گل دوم ⚽</span>
+                        <span class="event-title">
+                            ⚽ گل دوم نام‌آوران جنوب:
+                        </span>
                         امیررضا موکاری
                     </div>
 
@@ -356,6 +395,8 @@
 
         </section>
 
+
+        <!-- کادر فنی -->
 
         <section id="coaches">
 
@@ -377,6 +418,8 @@
 
         </section>
 
+
+        <!-- بازیکنان -->
 
         <section id="players">
 
@@ -404,6 +447,8 @@
 
         </section>
 
+
+        <!-- هدف -->
 
         <section id="goal">
 
