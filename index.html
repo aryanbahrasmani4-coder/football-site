@@ -87,9 +87,7 @@
             line-height: 1.9;
         }
 
-        /* =========================
-           نتایج مسابقات
-        ========================= */
+        /* نتایج مسابقات */
 
         .match-card {
             background-color: #f7fbf8;
@@ -117,11 +115,11 @@
         }
 
         .match-score {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
+            display: flex;
             align-items: center;
+            justify-content: center;
             gap: 20px;
-            direction: ltr;
+            direction: rtl;
         }
 
         .team {
@@ -132,7 +130,6 @@
             font-size: 25px;
             font-weight: bold;
             color: #0d6330;
-            direction: rtl;
         }
 
         .winner {
@@ -262,12 +259,11 @@
             }
 
             .match-score {
-                grid-template-columns: 1fr;
+                flex-direction: column;
                 gap: 15px;
             }
 
             .score {
-                order: 2;
                 font-size: 38px;
             }
 
@@ -295,7 +291,6 @@
 
     </header>
 
-
     <nav>
 
         <a href="#about">درباره باشگاه</a>
@@ -306,11 +301,7 @@
 
     </nav>
 
-
     <div class="container">
-
-
-        <!-- درباره باشگاه -->
 
         <section id="about">
 
@@ -329,9 +320,6 @@
             </p>
 
         </section>
-
-
-        <!-- نتایج مسابقات -->
 
         <section id="results">
 
@@ -356,7 +344,7 @@
                     </div>
 
                     <div class="score">
-                        2 - 0
+                        ۲ - ۰
                     </div>
 
                     <div class="team">
@@ -395,9 +383,6 @@
 
         </section>
 
-
-        <!-- کادر فنی -->
-
         <section id="coaches">
 
             <h2>👔 کادر فنی</h2>
@@ -418,9 +403,6 @@
 
         </section>
 
-
-        <!-- بازیکنان -->
-
         <section id="players">
 
             <h2>👥 بازیکنان نام‌آوران جنوب در رده سنی ۹۱ استانی</h2>
@@ -433,7 +415,7 @@
                 <div class="player">حمیدرضا گرگندی</div>
                 <div class="player">آریان بهرآسمانی</div>
                 <div class="player">ابتین اعظمی</div>
-                <div class="player">محمدحسام امیرافشلی‌نژاد</div>
+                <div class="player">محمدحسام افشلی‌نژاد</div>
                 <div class="player">معراج شبرنگ‌زاده</div>
                 <div class="player">طاها کمالی رمون</div>
                 <div class="player">احمدرضا فاریابی</div>
@@ -446,9 +428,6 @@
             </div>
 
         </section>
-
-
-        <!-- هدف -->
 
         <section id="goal">
 
@@ -464,13 +443,11 @@
 
         </section>
 
-
         <div class="slogan">
             ⚽ یک تیم، یک هدف، یک نام؛ نام‌آوران جنوب 🟢
         </div>
 
     </div>
-
 
     <footer>
 
