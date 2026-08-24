@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>باشگاه نام‌آوران جنوب</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eef7f0;
+            color: #222;
+            text-align: center;
+        }
+
+        header {
+            background-color: #168a45;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .logo {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+        }
+
+        header p {
+            color: white;
+            font-size: 20px;
+        }
+
+        nav {
+            background-color: #0d6330;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        section {
+            background-color: white;
+            margin-bottom: 25px;
+            padding: 30px;
+            border-radius: 18px;
+        }
+
+        h2 {
+            color: #168a45;
+            font-size: 28px;
+        }
+
+        h3 {
+            color: #0d6330;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.9;
+        }
+
+        .coaches {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .coach {
+            background-color: #eef7f0;
+            padding: 20px;
+            border-radius: 15px;
+            width: 220px;
+        }
+
+        .players {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .player {
+            background-color: #eef7f0;
+            padding: 18px;
+            border-radius: 15px;
+            width: 200px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .player:hover {
+            background-color: #d7f0df;
+            transform: translateY(-5px);
+        }
+
+        .slogan {
+            background-color: #168a45;
+            color: white;
+            padding: 35px;
+            border-radius: 18px;
+            font-size: 25px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #0d6330;
+            color: white;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .player,
+            .coach {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <img src="logo.png" alt="لوگوی باشگاه نام‌آوران جنوب" class="logo">
+
+        <h1>⚽ باشگاه نام‌آوران جنوب</h1>
+
+        <p>
+            به وب‌سایت باشگاه نام‌آوران جنوب خوش آمدید 🟢
+        </p>
+
+    </header>
+
+
+    <nav>
+
+        <a href="#about">درباره باشگاه</a>
+        <a href="#coaches">کادر فنی</a>
+        <a href="#players">بازیکنان</a>
+        <a href="#goal">هدف ما</a>
+
+    </nav>
+
+
+    <div class="container">
+
+
+        <section id="about">
+
+            <h2>⚽ درباره باشگاه</h2>
+
+            <p>
+                نام‌آوران جنوب، تیمی از شهرستان جیرفت در جنوب استان کرمان است که با حضور بازیکنان جوان و پرتلاش در رشته فوتسال فعالیت می‌کند.
+            </p>
+
+            <p>
+                این تیم با تمرین، تلاش، همدلی و روحیه تیمی، مسیر پیشرفت خود را در فوتسال ادامه می‌دهد و تلاش می‌کند در هر مسابقه بهترین عملکرد خود را به نمایش بگذارد.
+            </p>
+
+            <p>
+                رنگ اصلی نام‌آوران جنوب <strong>سبز</strong> است؛ رنگی که برای ما نماد انرژی، امید، رشد و تلاش برای موفقیت است. 🟢
+            </p>
+
+        </section>
+
+
+        <section id="coaches">
+
+            <h2>👔 کادر فنی</h2>
+
+            <div class="coaches">
+
+                <div class="coach">
+                    <h3>ابوالفضل ایزدی</h3>
+                    <p>مربی تیم</p>
+                </div>
+
+                <div class="coach">
+                    <h3>مهدی نبوی</h3>
+                    <p>مربی تیم</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="players">
+
+            <h2>👥 بازیکنان نام‌آوران جنوب</h2>
+
+            <div class="players">
+
+                <div class="player">طاها افضلی</div>
+                <div class="player">فرید سالاری</div>
+                <div class="player">امیر نبوی</div>
+                <div class="player">حمیدرضا گرگندی</div>
+                <div class="player">آریان بهرآسمانی</div>
+                <div class="player">ابتین اعظمی</div>
+                <div class="player">محمدحسام امیرافشلی‌نژاد</div>
+                <div class="player">معراج شبرنگ‌زاده</div>
+                <div class="player">طاها کمالی رمون</div>
+                <div class="player">احمدرضا فاریابی</div>
+                <div class="player">کیان امیری‌پور</div>
+                <div class="player">آرین سالاری چمن</div>
+                <div class="player">ابوالفضل ناوکی</div>
+                <div class="player">امیررضا موکاری</div>
+                <div class="player">زهیر جوهری</div>
+
+            </div>
+
+        </section>
+
+
+        <section id="goal">
+
+            <h2>🎯 هدف ما</h2>
+
+            <p>
+                هدف نام‌آوران جنوب فقط حضور در مسابقات نیست. ما تلاش می‌کنیم با تمرین مستمر، پیشرفت فردی، کار تیمی و تلاش برای بهتر شدن، قدم‌به‌قدم مسیر پیشرفت خود را ادامه دهیم.
+            </p>
+
+            <p>
+                ما یک تیم هستیم؛ در زمین برای رقابت و بیرون از زمین برای حمایت از یکدیگر.
+            </p>
+
+        </section>
+
+
+        <div class="slogan">
+            ⚽ یک تیم، یک هدف، یک نام؛ نام‌آوران جنوب 🟢
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        <p>© باشگاه فوتسال نام‌آوران جنوب</p>
+        <p>شهرستان جیرفت | جنوب استان کرمان</p>
+
+    </footer>
+
+</body>
+
+</html>
