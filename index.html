@@ -8,7 +8,6 @@
     <title>باشگاه نام‌آوران جنوب</title>
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -87,7 +86,7 @@
             line-height: 1.9;
         }
 
-        /* نتایج مسابقات */
+        /* ================= نتایج مسابقات ================= */
 
         .match-card {
             background-color: #f7fbf8;
@@ -114,12 +113,13 @@
             margin-bottom: 30px;
         }
 
+        /* چیدمان نتیجه */
         .match-score {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            justify-content: center;
-            gap: 20px;
-            direction: rtl;
+            gap: 25px;
+            direction: ltr;
         }
 
         .team {
@@ -130,6 +130,7 @@
             font-size: 25px;
             font-weight: bold;
             color: #0d6330;
+            direction: rtl;
         }
 
         .winner {
@@ -143,8 +144,16 @@
             font-weight: bold;
             padding: 14px 30px;
             border-radius: 16px;
-            direction: ltr;
             white-space: nowrap;
+            direction: ltr;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .score-number {
+            display: inline-block;
         }
 
         .match-summary {
@@ -181,7 +190,7 @@
             margin-left: 10px;
         }
 
-        /* کادر فنی */
+        /* ================= کادر فنی ================= */
 
         .coaches {
             display: flex;
@@ -198,7 +207,7 @@
             width: 220px;
         }
 
-        /* بازیکنان */
+        /* ================= بازیکنان ================= */
 
         .players {
             display: flex;
@@ -259,6 +268,7 @@
             }
 
             .match-score {
+                display: flex;
                 flex-direction: column;
                 gap: 15px;
             }
@@ -270,17 +280,13 @@
             .team-name {
                 font-size: 22px;
             }
-
         }
-
     </style>
-
 </head>
 
 <body>
 
     <header>
-
         <img src="logo.png" alt="لوگوی باشگاه نام‌آوران جنوب" class="logo">
 
         <h1>⚽ باشگاه نام‌آوران جنوب</h1>
@@ -288,20 +294,21 @@
         <p>
             به وب‌سایت باشگاه نام‌آوران جنوب خوش آمدید 🟢
         </p>
-
     </header>
 
-    <nav>
 
+    <nav>
         <a href="#about">درباره باشگاه</a>
         <a href="#results">نتایج مسابقات</a>
         <a href="#coaches">کادر فنی</a>
         <a href="#players">بازیکنان</a>
         <a href="#goal">هدف ما</a>
-
     </nav>
 
+
     <div class="container">
+
+        <!-- درباره باشگاه -->
 
         <section id="about">
 
@@ -321,6 +328,9 @@
 
         </section>
 
+
+        <!-- نتایج مسابقات -->
+
         <section id="results">
 
             <h2>🏆 نتایج مسابقات</h2>
@@ -335,31 +345,37 @@
                     📅 ۲ شهریور ۱۴۰۵
                 </div>
 
+
+                <!-- ترتیب نمایش:
+                     شاهین | ۰ - ۲ | نام‌آوران جنوب -->
+
                 <div class="match-score">
 
                     <div class="team">
-                     <div class="match-score">
+                        <div class="team-name">
+                            شاهین
+                        </div>
+                    </div>
 
-    <div class="team">
-        <div class="team-name">
-            شاهین
-        </div>
-    </div>
+                    <div class="score">
+                        <span class="score-number">۰</span>
+                        <span>-</span>
+                        <span class="score-number">۲</span>
+                    </div>
 
-    <div class="score">
-        ۰ - ۲
-    </div>
+                    <div class="team">
+                        <div class="team-name winner">
+                            نام‌آوران جنوب
+                        </div>
+                    </div>
 
-    <div class="team">
-        <div class="team-name winner">
-            نام‌آوران جنوب
-        </div>
-    </div>
+                </div>
 
-</div>
+
                 <div class="match-summary">
                     🟢 نام‌آوران جنوب با نتیجه ۲ بر ۰ مقابل شاهین پیروز شد.
                 </div>
+
 
                 <div class="events">
 
@@ -385,6 +401,9 @@
 
         </section>
 
+
+        <!-- کادر فنی -->
+
         <section id="coaches">
 
             <h2>👔 کادر فنی</h2>
@@ -405,6 +424,9 @@
 
         </section>
 
+
+        <!-- بازیکنان -->
+
         <section id="players">
 
             <h2>👥 بازیکنان نام‌آوران جنوب در رده سنی ۹۱ استانی</h2>
@@ -417,7 +439,7 @@
                 <div class="player">حمیدرضا گرگندی</div>
                 <div class="player">آریان بهرآسمانی</div>
                 <div class="player">ابتین اعظمی</div>
-           <div class="player">محمدحسام افضلی‌نژاد</div>
+                <div class="player">محمدحسام افضلی نژاد</div>
                 <div class="player">معراج شبرنگ‌زاده</div>
                 <div class="player">طاها کمالی رمون</div>
                 <div class="player">احمدرضا فاریابی</div>
@@ -430,6 +452,9 @@
             </div>
 
         </section>
+
+
+        <!-- هدف ما -->
 
         <section id="goal">
 
@@ -445,17 +470,17 @@
 
         </section>
 
+
         <div class="slogan">
             ⚽ یک تیم، یک هدف، یک نام؛ نام‌آوران جنوب 🟢
         </div>
 
     </div>
 
-    <footer>
 
+    <footer>
         <p>© باشگاه فوتسال نام‌آوران جنوب</p>
         <p>شهرستان جیرفت | جنوب استان کرمان</p>
-
     </footer>
 
 </body>
