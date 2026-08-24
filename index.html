@@ -28,11 +28,11 @@
         }
 
         .logo {
-    width: 130px;
-    height: 130px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
 
         header h1 {
             margin: 0;
@@ -85,6 +85,83 @@
         p {
             font-size: 18px;
             line-height: 1.9;
+        }
+
+        /* نتایج مسابقات */
+
+        .match-card {
+            background-color: #f7fbf8;
+            border: 2px solid #d7eadc;
+            border-radius: 20px;
+            padding: 30px 20px;
+            margin-top: 25px;
+        }
+
+        .match-date {
+            color: #666;
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .match-score {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .team-name {
+            font-size: 25px;
+            font-weight: bold;
+            color: #0d6330;
+            min-width: 180px;
+        }
+
+        .score {
+            background-color: #168a45;
+            color: white;
+            font-size: 42px;
+            font-weight: bold;
+            padding: 12px 28px;
+            border-radius: 15px;
+            direction: ltr;
+        }
+
+        .match-status {
+            display: inline-block;
+            background-color: #d7f0df;
+            color: #168a45;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .events {
+            margin-top: 35px;
+            text-align: right;
+        }
+
+        .events h3 {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .event {
+            background-color: white;
+            border-right: 5px solid #168a45;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            font-size: 18px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+        }
+
+        .event-number {
+            color: #168a45;
+            font-weight: bold;
+            margin-left: 8px;
         }
 
         .coaches {
@@ -160,6 +237,20 @@
                 width: 100%;
             }
 
+            .match-score {
+                gap: 15px;
+            }
+
+            .team-name {
+                width: 100%;
+                min-width: auto;
+                font-size: 22px;
+            }
+
+            .score {
+                font-size: 36px;
+            }
+
         }
 
     </style>
@@ -184,6 +275,7 @@
     <nav>
 
         <a href="#about">درباره باشگاه</a>
+        <a href="#results">نتایج مسابقات</a>
         <a href="#coaches">کادر فنی</a>
         <a href="#players">بازیکنان</a>
         <a href="#goal">هدف ما</a>
@@ -213,6 +305,55 @@
         </section>
 
 
+        <section id="results">
+
+            <h2>🏆 نتایج مسابقات</h2>
+
+            <div class="match-card">
+
+                <div class="match-status">پایان بازی</div>
+
+                <div class="match-date">
+                    📅 ۲ شهریور ۱۴۰۵
+                </div>
+
+                <div class="match-score">
+
+                    <div class="team-name">
+                        نام‌آوران جنوب
+                    </div>
+
+                    <div class="score">
+                        2 - 0
+                    </div>
+
+                    <div class="team-name">
+                        شاهین
+                    </div>
+
+                </div>
+
+                <div class="events">
+
+                    <h3>⚽ اتفاقات مسابقه</h3>
+
+                    <div class="event">
+                        <span class="event-number">گل اول ⚽</span>
+                        طاها کمالی رمون
+                    </div>
+
+                    <div class="event">
+                        <span class="event-number">گل دوم ⚽</span>
+                        امیررضا موکاری
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
         <section id="coaches">
 
             <h2>👔 کادر فنی</h2>
@@ -236,7 +377,7 @@
 
         <section id="players">
 
-            <h2>👥 بازیکنان نام‌آوران جنوب</h2>
+            <h2>👥 بازیکنان نام‌آوران جنوب در رده سنی ۹۱ استانی</h2>
 
             <div class="players">
 
