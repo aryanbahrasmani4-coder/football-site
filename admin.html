@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>پنل مدیریت | نام‌آوران جنوب</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef7f0;
+            color: #222;
+        }
+
+        header {
+            background: #168a45;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #168a45;
+            margin-top: 0;
+            border-bottom: 2px solid #d7eadc;
+            padding-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            text-align: right;
+            margin: 15px 0 7px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            border: none;
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-family: inherit;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .save-btn {
+            background: #168a45;
+            color: white;
+        }
+
+        .save-btn:hover {
+            background: #0d6330;
+        }
+
+        .delete-btn {
+            background: #c0392b;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .add-btn {
+            background: #0d6330;
+            color: white;
+        }
+
+        .item {
+            background: #f7fbf8;
+            border-right: 5px solid #168a45;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 12px;
+        }
+
+        .item input {
+            margin-bottom: 10px;
+        }
+
+        .message {
+            display: none;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .success {
+            display: block;
+            background: #d7f0df;
+            color: #168a45;
+        }
+
+        .error {
+            display: block;
+            background: #f8d7da;
+            color: #a12622;
+        }
+
+        .top-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>⚙️ پنل مدیریت نام‌آوران جنوب</h1>
+
+        <p>مدیریت اطلاعات وب‌سایت باشگاه</p>
+
+        <a href="index.html" class="top-link">مشاهده سایت اصلی</a>
+    </header>
+
+
+    <div class="container">
+
+        <div id="message" class="message"></div>
+
+
+        <!-- درباره باشگاه -->
+
+        <div class="panel">
+
+            <h2>⚽ درباره باشگاه</h2>
+
+            <label>پاراگراف اول</label>
+            <textarea id="about1"></textarea>
+
+            <label>پاراگراف دوم</label>
+            <textarea id="about2"></textarea>
+
+            <label>پاراگراف سوم</label>
+            <textarea id="about3"></textarea>
+
+            <button class="save-btn" onclick="saveAbout()">
+                ذخیره درباره باشگاه
+            </button>
+
+        </div>
+
+
+        <!-- نتیجه مسابقه -->
+
+        <div class="panel">
+
+            <h2>🏆 نتیجه مسابقه</h2>
+
+            <label>وضعیت بازی</label>
+            <input type="text" id="match-status">
+
+            <label>تاریخ مسابقه</label>
+            <input type="text" id="match-date">
+
+            <label>نام تیم نام‌آوران / تیم اول</label>
+            <input type="text" id="team1">
+
+            <label>گل تیم اول</label>
+            <input type="text" id="score1">
+
+            <label>نام تیم دوم</label>
+            <input type="text" id="team2">
+
+            <label>گل تیم دوم</label>
+            <input type="text" id="score2">
+
+            <label>متن خلاصه بازی</label>
+            <textarea id="match-summary"></textarea>
+
+            <button class="save-btn" onclick="saveMatch()">
+                ذخیره نتیجه مسابقه
+            </button>
+
+        </div>
+
+
+        <!-- اتفاقات مسابقه -->
+
+        <div class="panel">
+
+            <h2>⚽ اتفاقات مسابقه</h2>
+
+            <div id="events-container"></div>
+
+            <button class="add-btn" onclick="addEvent()">
+                + اضافه کردن اتفاق
+            </button>
+
+            <br>
+
+            <button class="save-btn" onclick="saveEvents()">
+                ذخیره اتفاقات مسابقه
+            </button>
+
+        </div>
+
+
+        <!-- مربیان -->
+
+        <div class="panel">
+
+            <h2>👔 کادر فنی</h2>
+
+            <div id="coaches-container"></div>
+
+            <button class="add-btn" onclick="addCoach()">
+                + اضافه کردن مربی
+            </button>
+
+            <br>
+
+            <button class="save-btn" onclick="saveCoaches()">
+                ذخیره کادر فنی
+            </button>
+
+        </div>
+
+
+        <!-- بازیکنان -->
+
+        <div class="panel">
+
+            <h2>👥 بازیکنان</h2>
+
+            <div id="players-container"></div>
+
+            <button class="add-btn" onclick="addPlayer()">
+                + اضافه کردن بازیکن
+            </button>
+
+            <br>
+
+            <button class="save-btn" onclick="savePlayers()">
+                ذخیره بازیکنان
+            </button>
+
+        </div>
+
+
+        <!-- هدف تیم -->
+
+        <div class="panel">
+
+            <h2>🎯 هدف تیم</h2>
+
+            <label>پاراگراف اول</label>
+            <textarea id="goal1"></textarea>
+
+            <label>پاراگراف دوم</label>
+            <textarea id="goal2"></textarea>
+
+            <button class="save-btn" onclick="saveGoal()">
+                ذخیره هدف تیم
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+
+        const SUPABASE_URL = "https://cvjmkhjugoondbwmrptv.supabase.co";
+
+        const SUPABASE_KEY = "sb_publishable_XcUx0xy-R7yVqO9UnxuWQg_NPKlGExH";
+
+        const supabaseClient = supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_KEY
+        );
+
+
+        /* ================= پیام ================= */
+
+        function showMessage(text, type) {
+
+            const message = document.getElementById("message");
+
+            message.textContent = text;
+
+            message.className = "message " + type;
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+            setTimeout(function () {
+                message.className = "message";
+            }, 4000);
+        }
+
+
+        /* ================= دریافت اطلاعات ================= */
+
+        async function loadAdminData() {
+
+            const { data, error } = await supabaseClient
+                .from("site_data")
+                .select("*");
+
+
+            if (error) {
+
+                console.error(error);
+
+                showMessage(
+                    "خطا در دریافت اطلاعات: " + error.message,
+                    "error"
+                );
+
+                return;
+            }
+
+
+            const siteData = {};
+
+            data.forEach(function (item) {
+                siteData[item.section] = item.content;
+            });
+
+
+            /* درباره باشگاه */
+
+            if (siteData.about) {
+
+                document.getElementById("about1").value =
+                    siteData.about.paragraph1 || "";
+
+                document.getElementById("about2").value =
+                    siteData.about.paragraph2 || "";
+
+                document.getElementById("about3").value =
+                    siteData.about.paragraph3 || "";
+            }
+
+
+            /* مسابقه */
+
+            if (siteData.match) {
+
+                const match = siteData.match;
+
+                document.getElementById("match-status").value =
+                    match.status || "";
+
+                document.getElementById("match-date").value =
+                    match.date || "";
+
+                document.getElementById("team1").value =
+                    match.team1 || "";
+
+                document.getElementById("score1").value =
+                    match.score1 || "";
+
+                document.getElementById("team2").value =
+                    match.team2 || "";
+
+                document.getElementById("score2").value =
+                    match.score2 || "";
+
+                document.getElementById("match-summary").value =
+                    match.summary || "";
+            }
+
+
+            /* اتفاقات */
+
+            const eventsContainer =
+                document.getElementById("events-container");
+
+            eventsContainer.innerHTML = "";
+
+            if (siteData.events) {
+
+                siteData.events.forEach(function (event) {
+                    addEvent(event.title, event.text);
+                });
+            }
+
+
+            /* مربیان */
+
+            const coachesContainer =
+                document.getElementById("coaches-container");
+
+            coachesContainer.innerHTML = "";
+
+            if (siteData.coaches) {
+
+                siteData.coaches.forEach(function (coach) {
+                    addCoach(coach.name, coach.role);
+                });
+            }
+
+
+            /* بازیکنان */
+
+            const playersContainer =
+                document.getElementById("players-container");
+
+            playersContainer.innerHTML = "";
+
+            if (siteData.players) {
+
+                siteData.players.forEach(function (player) {
+                    addPlayer(player);
+                });
+            }
+
+
+            /* هدف */
+
+            if (siteData.goal) {
+
+                document.getElementById("goal1").value =
+                    siteData.goal.paragraph1 || "";
+
+                document.getElementById("goal2").value =
+                    siteData.goal.paragraph2 || "";
+            }
+        }
+
+
+        /* ================= ذخیره اطلاعات ================= */
+
+        async function updateData(section, content) {
+
+            const { error } = await supabaseClient
+                .from("site_data")
+                .update({
+                    content: content,
+                    updated_at: new Date().toISOString()
+                })
+                .eq("section", section);
+
+
+            if (error) {
+
+                console.error(error);
+
+                showMessage(
+                    "خطا در ذخیره اطلاعات: " + error.message,
+                    "error"
+                );
+
+                return false;
+            }
+
+            showMessage(
+                "اطلاعات با موفقیت ذخیره شد ✅",
+                "success"
+            );
+
+            return true;
+        }
+
+
+        /* ================= درباره باشگاه ================= */
+
+        function saveAbout() {
+
+            updateData("about", {
+
+                paragraph1:
+                    document.getElementById("about1").value,
+
+                paragraph2:
+                    document.getElementById("about2").value,
+
+                paragraph3:
+                    document.getElementById("about3").value
+            });
+        }
+
+
+        /* ================= مسابقه ================= */
+
+        function saveMatch() {
+
+            updateData("match", {
+
+                status:
+                    document.getElementById("match-status").value,
+
+                date:
+                    document.getElementById("match-date").value,
+
+                team1:
+                    document.getElementById("team1").value,
+
+                score1:
+                    document.getElementById("score1").value,
+
+                team2:
+                    document.getElementById("team2").value,
+
+                score2:
+                    document.getElementById("score2").value,
+
+                summary:
+                    document.getElementById("match-summary").value
+            });
+        }
+
+
+        /* ================= اتفاقات ================= */
+
+        function addEvent(title = "", text = "") {
+
+            const container =
+                document.getElementById("events-container");
+
+            const item = document.createElement("div");
+
+            item.className = "item";
+
+            item.innerHTML = `
+
+                <label>عنوان اتفاق</label>
+
+                <input
+                    type="text"
+                    class="event-title-input"
+                    value="${title}"
+                    placeholder="مثلاً گل اول نام‌آوران جنوب"
+                >
+
+                <label>توضیحات</label>
+
+                <input
+                    type="text"
+                    class="event-text-input"
+                    value="${text}"
+                    placeholder="مثلاً نام گلزن"
+                >
+
+                <button
+                    class="delete-btn"
+                    onclick="this.parentElement.remove()"
+                >
+                    حذف
+                </button>
+
+            `;
+
+            container.appendChild(item);
+        }
+
+
+        function saveEvents() {
+
+            const events = [];
+
+            const items =
+                document.querySelectorAll(
+                    "#events-container .item"
+                );
+
+
+            items.forEach(function (item) {
+
+                const title =
+                    item.querySelector(
+                        ".event-title-input"
+                    ).value;
+
+                const text =
+                    item.querySelector(
+                        ".event-text-input"
+                    ).value;
+
+                if (title || text) {
+
+                    events.push({
+                        title: title,
+                        text: text
+                    });
+                }
+            });
+
+
+            updateData("events", events);
+        }
+
+
+        /* ================= مربیان ================= */
+
+        function addCoach(name = "", role = "") {
+
+            const container =
+                document.getElementById("coaches-container");
+
+            const item = document.createElement("div");
+
+            item.className = "item";
+
+            item.innerHTML = `
+
+                <label>نام</label>
+
+                <input
+                    type="text"
+                    class="coach-name"
+                    value="${name}"
+                    placeholder="نام مربی"
+                >
+
+                <label>سمت</label>
+
+                <input
+                    type="text"
+                    class="coach-role"
+                    value="${role}"
+                    placeholder="مثلاً مربی تیم"
+                >
+
+                <button
+                    class="delete-btn"
+                    onclick="this.parentElement.remove()"
+                >
+                    حذف
+                </button>
+
+            `;
+
+            container.appendChild(item);
+        }
+
+
+        function saveCoaches() {
+
+            const coaches = [];
+
+            const items =
+                document.querySelectorAll(
+                    "#coaches-container .item"
+                );
+
+
+            items.forEach(function (item) {
+
+                const name =
+                    item.querySelector(
+                        ".coach-name"
+                    ).value;
+
+                const role =
+                    item.querySelector(
+                        ".coach-role"
+                    ).value;
+
+
+                if (name || role) {
+
+                    coaches.push({
+                        name: name,
+                        role: role
+                    });
+                }
+            });
+
+
+            updateData("coaches", coaches);
+        }
+
+
+        /* ================= بازیکنان ================= */
+
+        function addPlayer(name = "") {
+
+            const container =
+                document.getElementById("players-container");
+
+            const item = document.createElement("div");
+
+            item.className = "item";
+
+            item.innerHTML = `
+
+                <input
+                    type="text"
+                    class="player-name"
+                    value="${name}"
+                    placeholder="نام بازیکن"
+                >
+
+                <button
+                    class="delete-btn"
+                    onclick="this.parentElement.remove()"
+                >
+                    حذف
+                </button>
+
+            `;
+
+            container.appendChild(item);
+        }
+
+
+        function savePlayers() {
+
+            const players = [];
+
+            document
+                .querySelectorAll(".player-name")
+                .forEach(function (input) {
+
+                    if (input.value.trim()) {
+                        players.push(input.value.trim());
+                    }
+                });
+
+
+            updateData("players", players);
+        }
+
+
+        /* ================= هدف تیم ================= */
+
+        function saveGoal() {
+
+            updateData("goal", {
+
+                paragraph1:
+                    document.getElementById("goal1").value,
+
+                paragraph2:
+                    document.getElementById("goal2").value
+            });
+        }
+
+
+        /* ================= شروع ================= */
+
+        loadAdminData();
+
+    </script>
+
+</body>
+
+</html>

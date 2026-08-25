@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>کادر فنی | نام آوران جنوب</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f4f4f4;
+            color: #222;
+        }
+
+        .header {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .header p {
+            margin-top: 10px;
+            color: #ccc;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title h2 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .coaches {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .coach-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .coach-card h3 {
+            margin: 10px 0 15px;
+            font-size: 22px;
+        }
+
+        .coach-role {
+            color: #666;
+            font-size: 17px;
+        }
+
+        /* راه ارتباطی */
+
+        .contact-section {
+            background: white;
+            margin-top: 35px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 15px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 17px;
+        }
+
+        /* شماره تلفن */
+
+        .phone {
+            display: inline-block;
+            color: #111;
+            font-size: 19px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+
+            /* جلوگیری از برعکس شدن شماره */
+            direction: ltr;
+            unicode-bidi: embed;
+        }
+
+        .phone:hover {
+            text-decoration: underline;
+        }
+
+        .copy-text {
+            display: block;
+            font-size: 13px;
+            color: #777;
+            margin-top: 7px;
+        }
+
+        /* دکمه بازگشت */
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 40px auto 10px;
+            padding: 13px 28px;
+            background: #111;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+
+            .coaches {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .contact-section {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- سربرگ -->
+
+    <header class="header">
+
+        <h1>کادر فنی</h1>
+
+        <p>
+            نام آوران جنوب | نماینده شهرستان جیرفت
+        </p>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- عنوان -->
+
+        <div class="title">
+
+            <h2>
+                کادر فنی نام آوران جنوب
+            </h2>
+
+        </div>
+
+
+        <!-- مربیان -->
+
+        <section class="coaches">
+
+
+            <!-- مهدی نبوی -->
+
+            <div class="coach-card">
+
+                <h3>
+                    آقای مهدی نبوی
+                </h3>
+
+                <div class="coach-role">
+                    مربی
+                </div>
+
+            </div>
+
+
+            <!-- ابوالفضل ایزدی -->
+
+            <div class="coach-card">
+
+                <h3>
+                    آقای ابوالفضل ایزدی
+                </h3>
+
+                <div class="coach-role">
+                    مربی
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- راه ارتباطی با مربیان -->
+
+        <section class="contact-section">
+
+
+            <h2>
+                راه ارتباطی با مربیان
+            </h2>
+
+
+            <!-- شماره مهدی نبوی -->
+
+            <div class="contact-item">
+
+                <strong>
+                    آقای نبوی
+                </strong>
+
+
+                <a
+                    href="#"
+                    class="phone"
+                    onclick="copyPhone('09389401884'); return false;"
+                >
+                    0938 940 1884
+                </a>
+
+
+                <span class="copy-text">
+                    برای کپی کردن شماره روی آن بزنید
+                </span>
+
+            </div>
+
+
+            <!-- شماره ابوالفضل ایزدی -->
+
+            <div class="contact-item">
+
+                <strong>
+                    آقای ایزدی
+                </strong>
+
+
+                <a
+                    href="#"
+                    class="phone"
+                    onclick="copyPhone('09162712582'); return false;"
+                >
+                    0916 271 2582
+                </a>
+
+
+                <span class="copy-text">
+                    برای کپی کردن شماره روی آن بزنید
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- بازگشت -->
+
+        <a
+            href="index.html"
+            class="back-button"
+        >
+            ← بازگشت به صفحه اصلی
+        </a>
+
+
+    </main>
+
+
+    <footer>
+
+        © نام آوران جنوب - نماینده شهرستان جیرفت
+
+    </footer>
+
+
+    <!-- سیستم کپی شماره -->
+
+    <script>
+
+        function copyPhone(phone) {
+
+            navigator.clipboard.writeText(phone)
+
+            .then(function() {
+
+                alert("شماره تلفن کپی شد");
+
+            })
+
+            .catch(function() {
+
+                alert("کپی کردن شماره انجام نشد");
+
+            });
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
