@@ -113,7 +113,6 @@
             margin-bottom: 30px;
         }
 
-        /* چیدمان نتیجه */
         .match-score {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
@@ -251,6 +250,12 @@
             color: white;
         }
 
+        .loading {
+            color: #168a45;
+            font-weight: bold;
+            padding: 20px;
+        }
+
         @media (max-width: 600px) {
 
             header h1 {
@@ -314,17 +319,9 @@
 
             <h2>⚽ درباره باشگاه</h2>
 
-            <p>
-                نام‌آوران جنوب، تیمی از شهرستان جیرفت در جنوب استان کرمان است که با حضور بازیکنان جوان و پرتلاش در رشته فوتسال فعالیت می‌کند.
-            </p>
-
-            <p>
-                این تیم با تمرین، تلاش، همدلی و روحیه تیمی، مسیر پیشرفت خود را در فوتسال ادامه می‌دهد و تلاش می‌کند در هر مسابقه بهترین عملکرد خود را به نمایش بگذارد.
-            </p>
-
-            <p>
-                رنگ اصلی نام‌آوران جنوب <strong>سبز</strong> است؛ رنگی که برای ما نماد انرژی، امید، رشد و تلاش برای موفقیت است. 🟢
-            </p>
+            <div id="about-content" class="loading">
+                در حال بارگذاری اطلاعات...
+            </div>
 
         </section>
 
@@ -337,62 +334,41 @@
 
             <div class="match-card">
 
-                <div class="match-status">
-                    پایان بازی
+                <div class="match-status" id="match-status">
+                    در حال بارگذاری...
                 </div>
 
-                <div class="match-date">
-                    📅 ۲ شهریور ۱۴۰۵
-                </div>
+                <div class="match-date" id="match-date"></div>
 
-
-                <!-- ترتیب نمایش:
-                     شاهین | ۰ - ۲ | نام‌آوران جنوب -->
 
                 <div class="match-score">
 
                     <div class="team">
-                        <div class="team-name">
-                            شاهین
-                        </div>
+                        <div class="team-name" id="team2-name"></div>
                     </div>
 
                     <div class="score">
-                        <span class="score-number">۰</span>
+                        <span class="score-number" id="score2"></span>
                         <span>-</span>
-                        <span class="score-number">۲</span>
+                        <span class="score-number" id="score1"></span>
                     </div>
 
                     <div class="team">
-                        <div class="team-name winner">
-                            نام‌آوران جنوب
-                        </div>
+                        <div class="team-name winner" id="team1-name"></div>
                     </div>
 
                 </div>
 
 
-                <div class="match-summary">
-                    🟢 نام‌آوران جنوب با نتیجه ۲ بر ۰ مقابل شاهین پیروز شد.
-                </div>
+                <div class="match-summary" id="match-summary"></div>
 
 
                 <div class="events">
 
                     <h3>⚽ اتفاقات مسابقه</h3>
 
-                    <div class="event">
-                        <span class="event-title">
-                            ⚽ گل اول نام‌آوران جنوب:
-                        </span>
-                        طاها کمالی رمون
-                    </div>
-
-                    <div class="event">
-                        <span class="event-title">
-                            ⚽ گل دوم نام‌آوران جنوب:
-                        </span>
-                        امیررضا موکاری
+                    <div id="events-list" class="loading">
+                        در حال بارگذاری...
                     </div>
 
                 </div>
@@ -408,18 +384,8 @@
 
             <h2>👔 کادر فنی</h2>
 
-            <div class="coaches">
-
-                <div class="coach">
-                    <h3>ابوالفضل ایزدی</h3>
-                    <p>مربی تیم</p>
-                </div>
-
-                <div class="coach">
-                    <h3>مهدی نبوی</h3>
-                    <p>مربی تیم</p>
-                </div>
-
+            <div class="coaches" id="coaches-list">
+                <div class="loading">در حال بارگذاری...</div>
             </div>
 
         </section>
@@ -431,24 +397,8 @@
 
             <h2>👥 بازیکنان نام‌آوران جنوب در رده سنی ۹۱ استانی</h2>
 
-            <div class="players">
-
-                <div class="player">طاها افضلی</div>
-                <div class="player">فرید سالاری</div>
-                <div class="player">امیر نبوی</div>
-                <div class="player">حمیدرضا گرگندی</div>
-                <div class="player">آریان بهرآسمانی</div>
-                <div class="player">ابتین اعظمی</div>
-                <div class="player">محمدحسام افضلی نژاد</div>
-                <div class="player">معراج شبرنگ‌زاده</div>
-                <div class="player">طاها کمالی رمون</div>
-                <div class="player">احمدرضا فاریابی</div>
-                <div class="player">کیان امیری‌پور</div>
-                <div class="player">آرین سالاری چمن</div>
-                <div class="player">ابوالفضل ناوکی</div>
-                <div class="player">امیررضا موکاری</div>
-                <div class="player">زهیر جوهری</div>
-
+            <div class="players" id="players-list">
+                <div class="loading">در حال بارگذاری...</div>
             </div>
 
         </section>
@@ -460,13 +410,9 @@
 
             <h2>🎯 هدف ما</h2>
 
-            <p>
-                هدف نام‌آوران جنوب فقط حضور در مسابقات نیست. ما تلاش می‌کنیم با تمرین مستمر، پیشرفت فردی، کار تیمی و تلاش برای بهتر شدن، قدم‌به‌قدم مسیر پیشرفت خود را ادامه دهیم.
-            </p>
-
-            <p>
-                ما یک تیم هستیم؛ در زمین برای رقابت و بیرون از زمین برای حمایت از یکدیگر.
-            </p>
+            <div id="goal-content" class="loading">
+                در حال بارگذاری اطلاعات...
+            </div>
 
         </section>
 
@@ -482,6 +428,169 @@
         <p>© باشگاه فوتسال نام‌آوران جنوب</p>
         <p>شهرستان جیرفت | جنوب استان کرمان</p>
     </footer>
+
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+
+        const SUPABASE_URL = "https://cvjmkhjugoondbwmrptv.supabase.co";
+
+        const SUPABASE_KEY = "sb_publishable_XcUx0xy-R7yVqO9UnxuWQg_NPKlGExH";
+
+        const supabaseClient = supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_KEY
+        );
+
+
+        async function loadSiteData() {
+
+            const { data, error } = await supabaseClient
+                .from("site_data")
+                .select("*");
+
+
+            if (error) {
+
+                console.error(error);
+
+                document.querySelectorAll(".loading").forEach(function (element) {
+                    element.innerHTML = "خطا در دریافت اطلاعات سایت.";
+                });
+
+                return;
+            }
+
+
+            const siteData = {};
+
+            data.forEach(function (item) {
+                siteData[item.section] = item.content;
+            });
+
+
+            /* ================= درباره باشگاه ================= */
+
+            if (siteData.about) {
+
+                document.getElementById("about-content").innerHTML = `
+                    <p>${siteData.about.paragraph1}</p>
+                    <p>${siteData.about.paragraph2}</p>
+                    <p>${siteData.about.paragraph3}</p>
+                `;
+            }
+
+
+            /* ================= مسابقه ================= */
+
+            if (siteData.match) {
+
+                const match = siteData.match;
+
+                document.getElementById("match-status").textContent =
+                    match.status;
+
+                document.getElementById("match-date").textContent =
+                    "📅 " + match.date;
+
+                document.getElementById("team1-name").textContent =
+                    match.team1;
+
+                document.getElementById("team2-name").textContent =
+                    match.team2;
+
+                document.getElementById("score1").textContent =
+                    match.score1;
+
+                document.getElementById("score2").textContent =
+                    match.score2;
+
+                document.getElementById("match-summary").textContent =
+                    match.summary;
+            }
+
+
+            /* ================= اتفاقات مسابقه ================= */
+
+            if (siteData.events) {
+
+                const eventsList =
+                    document.getElementById("events-list");
+
+                eventsList.innerHTML = "";
+
+                siteData.events.forEach(function (event) {
+
+                    eventsList.innerHTML += `
+                        <div class="event">
+                            <span class="event-title">
+                                ${event.title}
+                            </span>
+                            ${event.text}
+                        </div>
+                    `;
+                });
+            }
+
+
+            /* ================= مربیان ================= */
+
+            if (siteData.coaches) {
+
+                const coachesList =
+                    document.getElementById("coaches-list");
+
+                coachesList.innerHTML = "";
+
+                siteData.coaches.forEach(function (coach) {
+
+                    coachesList.innerHTML += `
+                        <div class="coach">
+                            <h3>${coach.name}</h3>
+                            <p>${coach.role}</p>
+                        </div>
+                    `;
+                });
+            }
+
+
+            /* ================= بازیکنان ================= */
+
+            if (siteData.players) {
+
+                const playersList =
+                    document.getElementById("players-list");
+
+                playersList.innerHTML = "";
+
+                siteData.players.forEach(function (player) {
+
+                    playersList.innerHTML += `
+                        <div class="player">
+                            ${player}
+                        </div>
+                    `;
+                });
+            }
+
+
+            /* ================= هدف تیم ================= */
+
+            if (siteData.goal) {
+
+                document.getElementById("goal-content").innerHTML = `
+                    <p>${siteData.goal.paragraph1}</p>
+                    <p>${siteData.goal.paragraph2}</p>
+                `;
+            }
+        }
+
+
+        loadSiteData();
+
+    </script>
 
 </body>
 
