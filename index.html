@@ -62,172 +62,65 @@
         .container {
             max-width: 1000px;
             margin: auto;
-            padding: 30px 20px;
+            padding: 40px 20px;
         }
 
-        section {
+        .welcome {
             background-color: white;
-            margin-bottom: 25px;
-            padding: 30px;
-            border-radius: 18px;
-        }
-
-        h2 {
-            color: #168a45;
-            font-size: 28px;
-        }
-
-        h3 {
-            color: #0d6330;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.9;
-        }
-
-        /* ================= نتایج مسابقات ================= */
-
-        .match-card {
-            background-color: #f7fbf8;
-            border: 2px solid #d7eadc;
+            padding: 35px 25px;
             border-radius: 20px;
-            padding: 30px 20px;
-            margin-top: 25px;
-        }
-
-        .match-status {
-            display: inline-block;
-            background-color: #d7f0df;
-            color: #168a45;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 15px;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .match-date {
-            color: #666;
-            font-size: 17px;
             margin-bottom: 30px;
         }
 
-        .match-score {
+        .welcome h2 {
+            color: #168a45;
+            font-size: 30px;
+            margin-top: 0;
+        }
+
+        .welcome p {
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        .menu-grid {
             display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            gap: 25px;
-            direction: ltr;
-        }
-
-        .team {
-            text-align: center;
-        }
-
-        .team-name {
-            font-size: 25px;
-            font-weight: bold;
-            color: #0d6330;
-            direction: rtl;
-        }
-
-        .winner {
-            color: #168a45;
-        }
-
-        .score {
-            background-color: #168a45;
-            color: white;
-            font-size: 45px;
-            font-weight: bold;
-            padding: 14px 30px;
-            border-radius: 16px;
-            white-space: nowrap;
-            direction: ltr;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .score-number {
-            display: inline-block;
-        }
-
-        .match-summary {
-            margin-top: 25px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #168a45;
-        }
-
-        .events {
-            margin-top: 35px;
-            text-align: right;
-        }
-
-        .events h3 {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .event {
-            background-color: white;
-            border-right: 5px solid #168a45;
-            padding: 16px 20px;
-            margin-bottom: 12px;
-            border-radius: 12px;
-            font-size: 18px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-        }
-
-        .event-title {
-            color: #168a45;
-            font-weight: bold;
-            margin-left: 10px;
-        }
-
-        /* ================= کادر فنی ================= */
-
-        .coaches {
-            display: flex;
-            justify-content: center;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
         }
 
-        .coach {
-            background-color: #eef7f0;
-            padding: 20px;
-            border-radius: 15px;
-            width: 220px;
-        }
-
-        /* ================= بازیکنان ================= */
-
-        .players {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .player {
-            background-color: #eef7f0;
-            padding: 18px;
-            border-radius: 15px;
-            width: 200px;
-            font-size: 18px;
+        .menu-card {
+            display: block;
+            background-color: white;
+            padding: 30px 20px;
+            border-radius: 18px;
+            text-decoration: none;
+            color: #222;
             transition: 0.3s;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
         }
 
-        .player:hover {
+        .menu-card:hover {
+            transform: translateY(-7px);
             background-color: #d7f0df;
-            transform: translateY(-5px);
+        }
+
+        .menu-card .icon {
+            font-size: 45px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .menu-card h2 {
+            color: #168a45;
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        .menu-card p {
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.8;
         }
 
         .slogan {
@@ -236,7 +129,7 @@
             padding: 35px;
             border-radius: 18px;
             font-size: 25px;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         footer {
@@ -248,12 +141,8 @@
 
         footer p {
             color: white;
-        }
-
-        .loading {
-            color: #168a45;
-            font-weight: bold;
-            padding: 20px;
+            margin: 8px 0;
+            font-size: 16px;
         }
 
         @media (max-width: 600px) {
@@ -267,23 +156,12 @@
                 margin: 8px;
             }
 
-            .player,
-            .coach {
-                width: 100%;
+            .welcome h2 {
+                font-size: 25px;
             }
 
-            .match-score {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .score {
-                font-size: 38px;
-            }
-
-            .team-name {
-                font-size: 22px;
+            .slogan {
+                font-size: 20px;
             }
         }
     </style>
@@ -292,129 +170,113 @@
 <body>
 
     <header>
-        <img src="logo.png" alt="لوگوی باشگاه نام‌آوران جنوب" class="logo">
+
+        <img src="logo.png"
+             alt="لوگوی باشگاه نام‌آوران جنوب"
+             class="logo">
 
         <h1>⚽ باشگاه نام‌آوران جنوب</h1>
 
         <p>
             به وب‌سایت باشگاه نام‌آوران جنوب خوش آمدید 🟢
         </p>
+
     </header>
 
 
     <nav>
-        <a href="#about">درباره باشگاه</a>
-        <a href="#results">نتایج مسابقات</a>
-        <a href="#coaches">کادر فنی</a>
-        <a href="#players">بازیکنان</a>
-        <a href="#goal">هدف ما</a>
+
+        <a href="index.html">خانه</a>
+        <a href="about.html">درباره باشگاه</a>
+        <a href="results.html">نتایج مسابقات</a>
+        <a href="coaches.html">کادر فنی</a>
+        <a href="players.html">بازیکنان</a>
+        <a href="goal.html">هدف ما</a>
+
     </nav>
 
 
     <div class="container">
 
-        <!-- درباره باشگاه -->
+        <section class="welcome">
 
-        <section id="about">
+            <h2>🟢 به خانواده نام‌آوران جنوب خوش آمدید</h2>
 
-            <h2>⚽ درباره باشگاه</h2>
-
-            <div id="about-content" class="loading">
-                در حال بارگذاری اطلاعات...
-            </div>
-
-        </section>
-
-
-        <!-- نتایج مسابقات -->
-
-        <section id="results">
-
-            <h2>🏆 نتایج مسابقات</h2>
-
-            <div class="match-card">
-
-                <div class="match-status" id="match-status">
-                    در حال بارگذاری...
-                </div>
-
-                <div class="match-date" id="match-date"></div>
-
-
-                <div class="match-score">
-
-                    <div class="team">
-                        <div class="team-name" id="team2-name"></div>
-                    </div>
-
-                    <div class="score">
-                        <span class="score-number" id="score2"></span>
-                        <span>-</span>
-                        <span class="score-number" id="score1"></span>
-                    </div>
-
-                    <div class="team">
-                        <div class="team-name winner" id="team1-name"></div>
-                    </div>
-
-                </div>
-
-
-                <div class="match-summary" id="match-summary"></div>
-
-
-                <div class="events">
-
-                    <h3>⚽ اتفاقات مسابقه</h3>
-
-                    <div id="events-list" class="loading">
-                        در حال بارگذاری...
-                    </div>
-
-                </div>
-
-            </div>
+            <p>
+                در این وب‌سایت می‌توانید با باشگاه نام‌آوران جنوب،
+                بازیکنان، کادر فنی و نتایج مسابقات ما آشنا شوید.
+            </p>
 
         </section>
 
 
-        <!-- کادر فنی -->
+        <div class="menu-grid">
 
-        <section id="coaches">
+            <a href="about.html" class="menu-card">
 
-            <h2>👔 کادر فنی</h2>
+                <span class="icon">⚽</span>
 
-            <div class="coaches" id="coaches-list">
-                <div class="loading">در حال بارگذاری...</div>
-            </div>
+                <h2>درباره باشگاه</h2>
 
-        </section>
+                <p>
+                    با نام‌آوران جنوب و مسیر فعالیت تیم آشنا شوید.
+                </p>
 
-
-        <!-- بازیکنان -->
-
-        <section id="players">
-
-            <h2>👥 بازیکنان نام‌آوران جنوب در رده سنی ۹۱ استانی</h2>
-
-            <div class="players" id="players-list">
-                <div class="loading">در حال بارگذاری...</div>
-            </div>
-
-        </section>
+            </a>
 
 
-        <!-- هدف ما -->
+            <a href="results.html" class="menu-card">
 
-        <section id="goal">
+                <span class="icon">🏆</span>
 
-            <h2>🎯 هدف ما</h2>
+                <h2>نتایج مسابقات</h2>
 
-            <div id="goal-content" class="loading">
-                در حال بارگذاری اطلاعات...
-            </div>
+                <p>
+                    نتایج و اتفاقات مسابقات تیم را مشاهده کنید.
+                </p>
 
-        </section>
+            </a>
+
+
+            <a href="coaches.html" class="menu-card">
+
+                <span class="icon">👔</span>
+
+                <h2>کادر فنی</h2>
+
+                <p>
+                    با مربیان و اعضای کادر فنی تیم آشنا شوید.
+                </p>
+
+            </a>
+
+
+            <a href="players.html" class="menu-card">
+
+                <span class="icon">👥</span>
+
+                <h2>بازیکنان</h2>
+
+                <p>
+                    لیست بازیکنان نام‌آوران جنوب را ببینید.
+                </p>
+
+            </a>
+
+
+            <a href="goal.html" class="menu-card">
+
+                <span class="icon">🎯</span>
+
+                <h2>هدف ما</h2>
+
+                <p>
+                    با اهداف و مسیر پیشرفت تیم آشنا شوید.
+                </p>
+
+            </a>
+
+        </div>
 
 
         <div class="slogan">
@@ -425,172 +287,12 @@
 
 
     <footer>
+
         <p>© باشگاه فوتسال نام‌آوران جنوب</p>
+
         <p>شهرستان جیرفت | جنوب استان کرمان</p>
+
     </footer>
-
-
-    <!-- Supabase -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-    <script>
-
-        const SUPABASE_URL = "https://cvjmkhjugoondbwmrptv.supabase.co";
-
-        const SUPABASE_KEY = "sb_publishable_XcUx0xy-R7yVqO9UnxuWQg_NPKlGExH";
-
-        const supabaseClient = supabase.createClient(
-            SUPABASE_URL,
-            SUPABASE_KEY
-        );
-
-
-        async function loadSiteData() {
-
-            const { data, error } = await supabaseClient
-                .from("site_data")
-                .select("*");
-
-
-            if (error) {
-
-                console.error(error);
-
-                document.querySelectorAll(".loading").forEach(function (element) {
-                    element.innerHTML = "خطا در دریافت اطلاعات سایت.";
-                });
-
-                return;
-            }
-
-
-            const siteData = {};
-
-            data.forEach(function (item) {
-                siteData[item.section] = item.content;
-            });
-
-
-            /* ================= درباره باشگاه ================= */
-
-            if (siteData.about) {
-
-                document.getElementById("about-content").innerHTML = `
-                    <p>${siteData.about.paragraph1}</p>
-                    <p>${siteData.about.paragraph2}</p>
-                    <p>${siteData.about.paragraph3}</p>
-                `;
-            }
-
-
-            /* ================= مسابقه ================= */
-
-            if (siteData.match) {
-
-                const match = siteData.match;
-
-                document.getElementById("match-status").textContent =
-                    match.status;
-
-                document.getElementById("match-date").textContent =
-                    "📅 " + match.date;
-
-                document.getElementById("team1-name").textContent =
-                    match.team1;
-
-                document.getElementById("team2-name").textContent =
-                    match.team2;
-
-                document.getElementById("score1").textContent =
-                    match.score1;
-
-                document.getElementById("score2").textContent =
-                    match.score2;
-
-                document.getElementById("match-summary").textContent =
-                    match.summary;
-            }
-
-
-            /* ================= اتفاقات مسابقه ================= */
-
-            if (siteData.events) {
-
-                const eventsList =
-                    document.getElementById("events-list");
-
-                eventsList.innerHTML = "";
-
-                siteData.events.forEach(function (event) {
-
-                    eventsList.innerHTML += `
-                        <div class="event">
-                            <span class="event-title">
-                                ${event.title}
-                            </span>
-                            ${event.text}
-                        </div>
-                    `;
-                });
-            }
-
-
-            /* ================= مربیان ================= */
-
-            if (siteData.coaches) {
-
-                const coachesList =
-                    document.getElementById("coaches-list");
-
-                coachesList.innerHTML = "";
-
-                siteData.coaches.forEach(function (coach) {
-
-                    coachesList.innerHTML += `
-                        <div class="coach">
-                            <h3>${coach.name}</h3>
-                            <p>${coach.role}</p>
-                        </div>
-                    `;
-                });
-            }
-
-
-            /* ================= بازیکنان ================= */
-
-            if (siteData.players) {
-
-                const playersList =
-                    document.getElementById("players-list");
-
-                playersList.innerHTML = "";
-
-                siteData.players.forEach(function (player) {
-
-                    playersList.innerHTML += `
-                        <div class="player">
-                            ${player}
-                        </div>
-                    `;
-                });
-            }
-
-
-            /* ================= هدف تیم ================= */
-
-            if (siteData.goal) {
-
-                document.getElementById("goal-content").innerHTML = `
-                    <p>${siteData.goal.paragraph1}</p>
-                    <p>${siteData.goal.paragraph2}</p>
-                `;
-            }
-        }
-
-
-        loadSiteData();
-
-    </script>
 
 </body>
 
