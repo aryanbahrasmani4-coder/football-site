@@ -1,33 +1,299 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>درباره باشگاه | نام آوران جنوب</title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>باشگاه نام‌آوران جنوب</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eef7f0;
+            color: #222;
+            text-align: center;
+        }
+
+        header {
+            background-color: #168a45;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+        }
+
+        header p {
+            color: white;
+            font-size: 20px;
+        }
+
+        nav {
+            background-color: #0d6330;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .welcome {
+            background-color: white;
+            padding: 35px 25px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .welcome h2 {
+            color: #168a45;
+            font-size: 30px;
+            margin-top: 0;
+        }
+
+        .welcome p {
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-card {
+            display: block;
+            background-color: white;
+            padding: 30px 20px;
+            border-radius: 18px;
+            text-decoration: none;
+            color: #222;
+            transition: 0.3s;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-7px);
+            background-color: #d7f0df;
+        }
+
+        .menu-card .icon {
+            font-size: 45px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .menu-card h2 {
+            color: #168a45;
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        .menu-card p {
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        .slogan {
+            background-color: #168a45;
+            color: white;
+            padding: 35px;
+            border-radius: 18px;
+            font-size: 25px;
+            margin-top: 30px;
+        }
+
+        footer {
+            background-color: #0d6330;
+            color: white;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            color: white;
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .welcome h2 {
+                font-size: 25px;
+            }
+
+            .slogan {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-    <h1>درباره باشگاه</h1>
-</header>
+    <header>
 
-<nav>
-    <a href="index.html">خانه</a>
-    <a href="about.html">درباره باشگاه</a>
-    <a href="coaches.html">کادر فنی</a>
-    <a href="players.html">بازیکنان</a>
-    <a href="matches.html">مسابقات</a>
-    <a href="news.html">اخبار</a>
-    <a href="contact.html">ارتباط با ما</a>
-</nav>
+        <img src="logo.png"
+             alt="لوگوی باشگاه نام‌آوران جنوب"
+             class="logo">
 
-<main>
-    <h2>باشگاه نام آوران جنوب</h2>
-    <p>
-        نام آوران جنوب نماینده شهرستان جیرفت در مسابقات است.
-    </p>
-</main>
+        <h1>⚽ باشگاه نام‌آوران جنوب</h1>
+
+        <p>
+            به وب‌سایت باشگاه نام‌آوران جنوب خوش آمدید 🟢
+        </p>
+
+    </header>
+
+
+    <nav>
+
+        <a href="index.html">خانه</a>
+        <a href="about.html">درباره باشگاه</a>
+        <a href="results.html">نتایج مسابقات</a>
+        <a href="coaches.html">کادر فنی</a>
+        <a href="players.html">بازیکنان</a>
+        <a href="goal.html">هدف ما</a>
+
+    </nav>
+
+
+    <div class="container">
+
+        <section class="welcome">
+
+            <h2>🟢 به خانواده نام‌آوران جنوب خوش آمدید</h2>
+
+            <p>
+                در این وب‌سایت می‌توانید با باشگاه نام‌آوران جنوب،
+                بازیکنان، کادر فنی و نتایج مسابقات ما آشنا شوید.
+            </p>
+
+        </section>
+
+
+        <div class="menu-grid">
+
+            <a href="about.html" class="menu-card">
+
+                <span class="icon">⚽</span>
+
+                <h2>درباره باشگاه</h2>
+
+                <p>
+                    با نام‌آوران جنوب و مسیر فعالیت تیم آشنا شوید.
+                </p>
+
+            </a>
+
+
+            <a href="results.html" class="menu-card">
+
+                <span class="icon">🏆</span>
+
+                <h2>نتایج مسابقات</h2>
+
+                <p>
+                    نتایج و اتفاقات مسابقات تیم را مشاهده کنید.
+                </p>
+
+            </a>
+
+
+            <a href="coaches.html" class="menu-card">
+
+                <span class="icon">👔</span>
+
+                <h2>کادر فنی</h2>
+
+                <p>
+                    با مربیان و اعضای کادر فنی تیم آشنا شوید.
+                </p>
+
+            </a>
+
+
+            <a href="players.html" class="menu-card">
+
+                <span class="icon">👥</span>
+
+                <h2>بازیکنان</h2>
+
+                <p>
+                    لیست بازیکنان نام‌آوران جنوب را ببینید.
+                </p>
+
+            </a>
+
+
+            <a href="goal.html" class="menu-card">
+
+                <span class="icon">🎯</span>
+
+                <h2>هدف ما</h2>
+
+                <p>
+                    با اهداف و مسیر پیشرفت تیم آشنا شوید.
+                </p>
+
+            </a>
+
+        </div>
+
+
+        <div class="slogan">
+            ⚽ یک تیم، یک هدف، یک نام؛ نام‌آوران جنوب 🟢
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        <p>© باشگاه فوتسال نام‌آوران جنوب</p>
+
+        <p>شهرستان جیرفت | جنوب استان کرمان</p>
+
+    </footer>
 
 </body>
+
 </html>
