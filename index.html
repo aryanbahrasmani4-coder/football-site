@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>باشگاه نام‌آوران جنوب</title>
+    <title>کادر فنی | باشگاه نام‌آوران جنوب</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -23,24 +24,24 @@
         header {
             background-color: #168a45;
             color: white;
-            padding: 40px 20px;
+            padding: 35px 20px;
         }
 
         .logo {
-            width: 130px;
-            height: 130px;
+            width: 110px;
+            height: 110px;
             object-fit: contain;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 42px;
+            font-size: 38px;
         }
 
         header p {
             color: white;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         nav {
@@ -65,71 +66,81 @@
             padding: 40px 20px;
         }
 
-        .welcome {
+        .page-title {
             background-color: white;
-            padding: 35px 25px;
+            padding: 30px;
             border-radius: 20px;
             margin-bottom: 30px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
         }
 
-        .welcome h2 {
+        .page-title h2 {
             color: #168a45;
-            font-size: 30px;
-            margin-top: 0;
+            font-size: 32px;
+            margin: 0 0 10px 0;
         }
 
-        .welcome p {
+        .page-title p {
             font-size: 18px;
             line-height: 2;
         }
 
-        .menu-grid {
+        .coach-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
 
-        .menu-card {
-            display: block;
+        .coach-card {
             background-color: white;
             padding: 30px 20px;
-            border-radius: 18px;
-            text-decoration: none;
-            color: #222;
-            transition: 0.3s;
+            border-radius: 20px;
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+            transition: 0.3s;
         }
 
-        .menu-card:hover {
+        .coach-card:hover {
             transform: translateY(-7px);
-            background-color: #d7f0df;
         }
 
-        .menu-card .icon {
-            font-size: 45px;
-            display: block;
-            margin-bottom: 12px;
+        .coach-icon {
+            font-size: 65px;
+            margin-bottom: 15px;
         }
 
-        .menu-card h2 {
+        .coach-card h2 {
             color: #168a45;
-            font-size: 22px;
+            font-size: 24px;
             margin: 10px 0;
         }
 
-        .menu-card p {
-            font-size: 16px;
-            margin: 0;
-            line-height: 1.8;
+        .coach-card h3 {
+            color: #0d6330;
+            font-size: 18px;
+            margin: 10px 0 15px 0;
         }
 
-        .slogan {
+        .coach-card p {
+            font-size: 16px;
+            line-height: 2;
+            margin: 0;
+        }
+
+        .back-button {
+            display: inline-block;
             background-color: #168a45;
             color: white;
-            padding: 35px;
-            border-radius: 18px;
-            font-size: 25px;
-            margin-top: 30px;
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 12px;
+            font-size: 18px;
+            margin-top: 35px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #0d6330;
+            transform: translateY(-3px);
         }
 
         footer {
@@ -156,15 +167,18 @@
                 margin: 8px;
             }
 
-            .welcome h2 {
-                font-size: 25px;
+            .page-title h2 {
+                font-size: 26px;
             }
 
-            .slogan {
-                font-size: 20px;
+            .coach-card {
+                padding: 25px 15px;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
@@ -178,7 +192,7 @@
         <h1>⚽ باشگاه نام‌آوران جنوب</h1>
 
         <p>
-            به وب‌سایت باشگاه نام‌آوران جنوب خوش آمدید 🟢
+            کادر فنی باشگاه
         </p>
 
     </header>
@@ -187,10 +201,15 @@
     <nav>
 
         <a href="index.html">خانه</a>
+
         <a href="about.html">درباره باشگاه</a>
+
         <a href="results.html">نتایج مسابقات</a>
+
         <a href="coaches.html">کادر فنی</a>
+
         <a href="players.html">بازیکنان</a>
+
         <a href="goal.html">هدف ما</a>
 
     </nav>
@@ -198,99 +217,95 @@
 
     <div class="container">
 
-        <section class="welcome">
 
-            <h2>🟢 به خانواده نام‌آوران جنوب خوش آمدید</h2>
+        <section class="page-title">
+
+            <h2>👔 کادر فنی</h2>
 
             <p>
-                در این وب‌سایت می‌توانید با باشگاه نام‌آوران جنوب،
-                بازیکنان، کادر فنی و نتایج مسابقات ما آشنا شوید.
+                آشنایی با مربیان و اعضای کادر فنی باشگاه نام‌آوران جنوب
             </p>
 
         </section>
 
 
-        <div class="menu-grid">
-
-            <a href="about.html" class="menu-card">
-
-                <span class="icon">⚽</span>
-
-                <h2>درباره باشگاه</h2>
-
-                <p>
-                    با نام‌آوران جنوب و مسیر فعالیت تیم آشنا شوید.
-                </p>
-
-            </a>
+        <div class="coach-grid">
 
 
-            <a href="results.html" class="menu-card">
+            <div class="coach-card">
 
-                <span class="icon">🏆</span>
+                <div class="coach-icon">
+                    👨‍🏫
+                </div>
 
-                <h2>نتایج مسابقات</h2>
+                <h2>سرمربی</h2>
+
+                <h3>نام سرمربی</h3>
 
                 <p>
-                    نتایج و اتفاقات مسابقات تیم را مشاهده کنید.
+                    مسئول هدایت فنی تیم و برنامه‌ریزی تمرینات
+                    و مسابقات باشگاه.
                 </p>
 
-            </a>
+            </div>
 
 
-            <a href="coaches.html" class="menu-card">
+            <div class="coach-card">
 
-                <span class="icon">👔</span>
+                <div class="coach-icon">
+                    🧑‍💼
+                </div>
 
-                <h2>کادر فنی</h2>
+                <h2>مربی</h2>
+
+                <h3>نام مربی</h3>
 
                 <p>
-                    با مربیان و اعضای کادر فنی تیم آشنا شوید.
+                    همکاری با سرمربی در تمرینات و آماده‌سازی
+                    بازیکنان برای مسابقات.
                 </p>
 
-            </a>
+            </div>
 
 
-            <a href="players.html" class="menu-card">
+            <div class="coach-card">
 
-                <span class="icon">👥</span>
+                <div class="coach-icon">
+                    🩺
+                </div>
 
-                <h2>بازیکنان</h2>
+                <h2>پزشک / کادر پزشکی</h2>
+
+                <h3>نام عضو کادر پزشکی</h3>
 
                 <p>
-                    لیست بازیکنان نام‌آوران جنوب را ببینید.
+                    رسیدگی به وضعیت جسمانی بازیکنان و
+                    مراقبت‌های پزشکی تیم.
                 </p>
 
-            </a>
+            </div>
 
-
-            <a href="goal.html" class="menu-card">
-
-                <span class="icon">🎯</span>
-
-                <h2>هدف ما</h2>
-
-                <p>
-                    با اهداف و مسیر پیشرفت تیم آشنا شوید.
-                </p>
-
-            </a>
 
         </div>
 
 
-        <div class="slogan">
-            ⚽ یک تیم، یک هدف، یک نام؛ نام‌آوران جنوب 🟢
-        </div>
+        <a href="index.html" class="back-button">
+            ← بازگشت به صفحه اصلی
+        </a>
+
 
     </div>
 
 
     <footer>
 
-        <p>© باشگاه فوتسال نام‌آوران جنوب</p>
+        <p>
+            © باشگاه فوتسال نام‌آوران جنوب
+        </p>
 
-        <p>شهرستان جیرفت | جنوب استان کرمان</p>
+        <p>
+            شهرستان جیرفت | جنوب استان کرمان
+        </p>
 
     </footer>
 
