@@ -186,7 +186,116 @@
         .jr-contact:hover {
             opacity: 1;
             transform: translateY(-3px);
-        }
+        }/* پنجره عضویت */
+.member-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 60, 30, 0.82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    padding: 20px;
+}
+
+.member-modal.hidden {
+    display: none;
+}
+
+.member-box {
+    background-color: white;
+    width: 100%;
+    max-width: 430px;
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.member-box h2 {
+    color: #168a45;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+.member-box p {
+    color: #555;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.member-box input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1px solid #c9dfd0;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    outline: none;
+}
+
+.member-box input:focus {
+    border-color: #168a45;
+}
+
+.member-box button {
+    width: 100%;
+    padding: 14px;
+    background-color: #168a45;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.member-box button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.member-message {
+    margin-top: 14px;
+    color: #c40000;
+    font-size: 14px;
+    min-height: 20px;
+}/* بخش اعضای سایت */
+.members-section {
+    margin-top: 35px;
+    background-color: white;
+    padding: 35px 25px;
+    border-radius: 20px;
+}
+
+.members-section h2 {
+    color: #168a45;
+    font-size: 28px;
+    margin-top: 0;
+}
+
+.members-section > p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.members-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.member-card {
+    background-color: #eef7f0;
+    color: #168a45;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: bold;
+    border: 1px solid #c9dfd0;
+}
 
         @media (max-width: 600px) {
 
@@ -218,7 +327,40 @@
 </head>
 
 <body>
+<!-- پنجره اجباری ثبت عضویت -->
+<div class="member-modal" id="memberModal">
 
+    <div class="member-box">
+
+        <h2>به سایت نام‌آوران جنوب خوش آمدید 🟢</h2>
+
+        <p>
+            برای ورود به سایت، لطفاً نام و نام خانوادگی خود را وارد کنید.
+        </p>
+
+        <input
+            type="text"
+            id="firstName"
+            placeholder="نام"
+            autocomplete="given-name"
+        >
+
+        <input
+            type="text"
+            id="lastName"
+            placeholder="نام خانوادگی"
+            autocomplete="family-name"
+        >
+
+        <button id="registerMember">
+            ثبت عضویت و ورود به سایت
+        </button>
+
+        <div class="member-message" id="memberMessage"></div>
+
+    </div>
+
+</div>
     <header>
 
         <img src="logo.png"
@@ -299,7 +441,9 @@
             ⚽ یک تیم، یک هدف، یک نام؛ نام‌آوران جنوب 🟢
         </div>
 
-    </div>
+    </div><div class="slogan">
+    ⚽ یک تیم، یک هدف، یک نام؛ نام‌آوران جنوب 🟢
+</div>
 
 
     <footer>
@@ -329,7 +473,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase.js"></script>
     <script src="site.js"></script>
-
+<script src="members.js"></script>
 </body>
 
 </html>
