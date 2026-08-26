@@ -145,6 +145,49 @@
             font-size: 16px;
         }
 
+        /* امضای Nexora */
+        .nexora-credit {
+            margin-top: 18px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.75);
+            direction: ltr;
+        }
+
+        .nexora-credit a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nexora-credit a:hover {
+            opacity: 0.7;
+        }
+
+        /* دکمه کوچک ارتباط با Nexora */
+        .nexora-contact {
+            position: fixed;
+            left: 18px;
+            bottom: 18px;
+            background-color: rgba(13, 99, 48, 0.88);
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            font-size: 13px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+            z-index: 999;
+            opacity: 0.8;
+        }
+
+        .nexora-contact:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
         @media (max-width: 600px) {
 
             header h1 {
@@ -162,6 +205,13 @@
 
             .slogan {
                 font-size: 20px;
+            }
+
+            .nexora-contact {
+                left: 12px;
+                bottom: 12px;
+                padding: 9px 13px;
+                font-size: 12px;
             }
         }
     </style>
@@ -297,12 +347,26 @@
 
         <p>شهرستان جیرفت | جنوب استان کرمان</p>
 
+        <div class="nexora-credit">
+            Designed & Developed by
+            <a href="https://rubika.ir/Timoti_66" target="_blank">Nexora</a>
+        </div>
+
     </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase.js"></script>
-<script src="site.js"></script> 
-<script src="site.js"></script>
+
+    <!-- دکمه ارتباط کوچک -->
+    <a href="https://rubika.ir/Timoti_66"
+       target="_blank"
+       class="nexora-contact">
+        ارتباط با Nexora
+    </a>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="site.js"></script>
+
 </body>
 
 </html>
