@@ -1,386 +1,137 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>درباره نمایندگی | بیمه ایران</title>
+    <title>درباره باشگاه | نام آوران جنوب</title>
 
     <style>
-
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
         body {
+            margin: 0;
             font-family: Tahoma, Arial, sans-serif;
-            background: #f5f8fc;
-            color: #163a63;
+            background: #f4f4f4;
+            color: #222;
         }
 
-        /* هدر */
-
-        header {
-            background: #005baa;
+        .header {
+            background: #111;
             color: white;
             text-align: center;
-            padding: 40px 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            padding: 35px 20px;
         }
 
-        header h1 {
+        .header h1 {
+            margin: 0;
             font-size: 32px;
-            margin-bottom: 12px;
         }
 
-        header p {
+        .header p {
+            margin-top: 10px;
+            color: #ccc;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .about-box {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            line-height: 2.2;
+        }
+
+        .about-box h2 {
+            margin-top: 0;
+            color: #111;
+            border-right: 5px solid #111;
+            padding-right: 12px;
+        }
+
+        .about-box p {
             font-size: 17px;
-            line-height: 2;
+            margin-bottom: 20px;
         }
 
-        /* دکمه بازگشت */
-
-        .back-container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 25px auto;
-        }
-
-        .back-btn {
+        .back-button {
             display: inline-block;
-            background: #005baa;
+            margin-top: 25px;
+            padding: 13px 28px;
+            background: #111;
             color: white;
             text-decoration: none;
-            padding: 12px 22px;
             border-radius: 10px;
             transition: 0.3s;
         }
 
-        .back-btn:hover {
-            background: #003d73;
+        .back-button:hover {
+            background: #333;
             transform: translateY(-2px);
         }
 
-        /* بخش اصلی */
-
-        .about-container {
-            width: 90%;
-            max-width: 900px;
-            margin: 20px auto 60px;
-        }
-
-        .about-card {
-            background: white;
-            padding: 40px;
-            border-radius: 22px;
-            box-shadow: 0 8px 25px rgba(0,91,170,0.13);
-            margin-bottom: 25px;
-        }
-
-        .about-card h2 {
-            color: #005baa;
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 25px;
-        }
-
-        .about-card p {
-            color: #444;
-            font-size: 17px;
-            line-height: 2.4;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        /* بخش شعار */
-
-        .quote-box {
-            background: #005baa;
-            color: white;
-            text-align: center;
-            padding: 35px 25px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,91,170,0.2);
-            margin-bottom: 25px;
-        }
-
-        .quote-box h2 {
-            font-size: 27px;
-            margin-bottom: 15px;
-        }
-
-        .quote-box p {
-            font-size: 18px;
-            line-height: 2;
-        }
-
-        /* بخش خدمات */
-
-        .services-box {
-            background: white;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,91,170,0.13);
-            margin-bottom: 25px;
-        }
-
-        .services-box h2 {
-            color: #005baa;
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .services-list {
-            list-style: none;
-        }
-
-        .services-list li {
-            background: #f1f7fc;
-            padding: 16px;
-            margin-bottom: 12px;
-            border-radius: 12px;
-            border-right: 5px solid #005baa;
-            color: #333;
-            font-size: 16px;
-        }
-
-        /* آدرس */
-
-        .address-box {
-            background: white;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,91,170,0.13);
-            text-align: center;
-        }
-
-        .address-box h2 {
-            color: #005baa;
-            margin-bottom: 20px;
-        }
-
-        .address-box p {
-            font-size: 18px;
-            color: #444;
-            line-height: 2.2;
-        }
-
-        .address-icon {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
-
-        /* فوتر */
-
         footer {
-            background: #003d73;
-            color: white;
             text-align: center;
-            padding: 25px 15px;
+            padding: 25px;
+            color: #777;
         }
-
-        footer p {
-            line-height: 2;
-        }
-
-        /* موبایل */
-
-        @media (max-width: 600px) {
-
-            header {
-                padding: 30px 15px;
-            }
-
-            header h1 {
-                font-size: 25px;
-            }
-
-            header p {
-                font-size: 15px;
-            }
-
-            .about-card {
-                padding: 25px 20px;
-            }
-
-            .about-card h2 {
-                font-size: 23px;
-            }
-
-            .about-card p {
-                font-size: 15px;
-                text-align: right;
-            }
-
-            .services-box,
-            .address-box {
-                padding: 25px 18px;
-            }
-
-            .quote-box h2 {
-                font-size: 23px;
-            }
-
-        }
-
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- هدر -->
-
-    <header>
-
-        <h1>درباره نمایندگی</h1>
-
-        <p>
-            بیمه ایران | نمایندگی خانم عظیمی جلگه
-        </p>
-
+    <header class="header">
+        <h1>درباره باشگاه</h1>
+        <p>نام آوران جنوب | نماینده شهرستان جیرفت</p>
     </header>
 
+    <main class="container">
 
-    <!-- دکمه بازگشت -->
+        <section class="about-box">
 
-    <div class="back-container">
-
-        <a href="index.html" class="back-btn">
-            ← بازگشت به صفحه اصلی
-        </a>
-
-    </div>
-
-
-    <!-- محتوای اصلی -->
-
-    <main class="about-container">
-
-
-        <!-- معرفی -->
-
-        <section class="about-card">
-
-            <h2>
-                بیمه، فقط یک قرارداد نیست؛ آرامش آینده شماست 🛡️
-            </h2>
+            <h2>باشگاه نام آوران جنوب</h2>
 
             <p>
-                انتخاب یک بیمه مناسب، انتخابی برای امروز و آینده است.
-                زمانی که از دارایی‌ها، خانواده، کسب‌وکار و آینده خود محافظت می‌کنید،
-                با آرامش بیشتری مسیر زندگی را ادامه خواهید داد.
+                باشگاه فوتسال <strong>نام آوران جنوب</strong> به عنوان نماینده
+                شهرستان جیرفت فعالیت می‌کند و با هدف حضور قدرتمند در مسابقات
+                و معرفی استعدادهای جوان منطقه تشکیل شده است.
             </p>
 
             <p>
-                در نمایندگی بیمه ایران خانم عظیمی جلگه، تلاش می‌کنیم با ارائه
-                مشاوره و راهنمایی مناسب، به شما کمک کنیم تا با توجه به شرایط و
-                نیازهای خود، انتخابی آگاهانه و مطمئن داشته باشید.
+                این تیم با گردهم آوردن بازیکنان مستعد و پرتلاش، تلاش می‌کند
+                با ایجاد یک فضای حرفه‌ای و دوستانه، زمینه رشد و پیشرفت بازیکنان
+                را فراهم کند.
             </p>
 
             <p>
-                از بیمه خودرو و شخص ثالث گرفته تا بیمه عمر، درمان، آتش‌سوزی،
-                مسئولیت و سایر خدمات بیمه‌ای، هدف ما این است که مسیر انتخاب
-                و دریافت خدمات بیمه‌ای برای شما ساده‌تر، سریع‌تر و مطمئن‌تر باشد.
+                نام آوران جنوب با تکیه بر تلاش بازیکنان، کادر فنی و حمایت
+                هواداران خود، برای کسب نتایج بهتر و سربلندی شهرستان جیرفت
+                در مسابقات مختلف تلاش می‌کند.
             </p>
 
             <p>
-                ما باور داریم هر مشتری شرایط متفاوتی دارد و یک انتخاب درست،
-                با شناخت نیازهای واقعی شما آغاز می‌شود.
-                به همین دلیل تلاش می‌کنیم در کنار شما باشیم تا با اطمینان بیشتری
-                برای آینده خود تصمیم بگیرید.
+                هدف ما تنها پیروزی در مسابقات نیست؛ بلکه ساختن یک تیم منسجم،
+                پیشرفت بازیکنان و ایجاد آینده‌ای موفق برای فوتسال منطقه است.
             </p>
+
+            <a href="index.html" class="back-button">
+                ← بازگشت به صفحه اصلی
+            </a>
 
         </section>
-
-
-        <!-- شعار -->
-
-        <section class="quote-box">
-
-            <h2>
-                آرامش امروز، اطمینان فردا
-            </h2>
-
-            <p>
-                اعتماد شما، بزرگ‌ترین سرمایه ماست.
-                در کنار شما هستیم تا آینده‌ای مطمئن‌تر بسازیم.
-            </p>
-
-        </section>
-
-
-        <!-- خدمات -->
-
-        <section class="services-box">
-
-            <h2>
-                🛡️ خدمات قابل ارائه
-            </h2>
-
-            <ul class="services-list">
-
-                <li>🚗 بیمه شخص ثالث و بدنه خودرو</li>
-
-                <li>❤️ بیمه عمر و سرمایه‌گذاری</li>
-
-                <li>🔥 بیمه آتش‌سوزی و منزل</li>
-
-                <li>🏢 بیمه مسئولیت و کسب‌وکار</li>
-
-                <li>✈️ بیمه مسافرتی</li>
-
-                <li>👷 بیمه مهندسی و پروژه‌ها</li>
-
-                <li>🚢 بیمه باربری و حمل‌ونقل</li>
-
-            </ul>
-
-        </section>
-
-
-        <!-- آدرس -->
-
-        <section class="address-box">
-
-            <div class="address-icon">
-                📍
-            </div>
-
-            <h2>
-                آدرس نمایندگی
-            </h2>
-
-            <p>
-                جیرفت، بلوار جانبازان، جنب پلیس +۱۰
-            </p>
-
-        </section>
-
 
     </main>
 
-
-    <!-- فوتر -->
-
     <footer>
-
-        <p>
-            بیمه ایران | نمایندگی خانم عظیمی جلگه
-        </p>
-
-        <p>
-            🛡️ آرامش امروز، اطمینان فردا
-        </p>
-
+        © نام آوران جنوب - نماینده شهرستان جیرفت
     </footer>
 
-
 </body>
-
 </html>
